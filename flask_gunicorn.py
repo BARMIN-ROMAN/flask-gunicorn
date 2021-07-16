@@ -76,6 +76,7 @@ class GunicornStandalone(gunicorn.app.base.BaseApplication):
                    'is active if debug is enabled.')
 @click.option('--workers', '-w', default=number_of_workers(), help='Number of Gunicorn workers')
 @click.option('--worker_class', '-wc', default=None, help="Specify a custom class of worker to use")
+@click.option('--timeout', '-t', default=None, help="Seconds of timeout")
 @flask.cli.pass_script_info
 def cli(info, host, port, reload, debugger, workers, worker_class):
 
@@ -89,6 +90,9 @@ def cli(info, host, port, reload, debugger, workers, worker_class):
         'workers': workers or number_of_workers(),
         'bind': '{}:{}'.format(host, port)
     }
+    
+    if timeout is not None:
+        options["timeout"] = timeout
 
     if worker_class is not None:
         options["worker_class"] = worker_class

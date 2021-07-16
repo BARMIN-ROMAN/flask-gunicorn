@@ -11,7 +11,7 @@ want to look into alternative solutions for serving your application.
 Install the extension with pip:
 
 ```sh
-$ pip install flask-gunicorn
+$ pip install git+https://github.com/BARMIN-ROMAN/flask-gunicorn.git
 ```
 
 ## Usage
@@ -49,6 +49,7 @@ help you customize your gunicorn server.
 | `--no-debugger`   | Turn off the debugger mode |
 | `--host`          | What address should the server bind to (e.g. `127.0.0.1`)
 | `--port`          | What port should be used (e.g. `5000`) |
+| `--timeout`       | Set timeout parameter to gunicorn  |
 | `--reload`        | Turn on the reloader (gunicorn will notice changes to code and restart if noticed) This is on by default in debug mode.|
 | `--noreload`      | Turn off the reloader |
 

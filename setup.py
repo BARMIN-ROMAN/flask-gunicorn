@@ -13,7 +13,8 @@ setup(
     py_modules=['flask_gunicorn'],
     install_requires=[
         'Flask',
-        'gunicorn',
+        'wheel',
+        'gunicorn==19.9.0',
     ]
 )
 

@@ -78,7 +78,7 @@ class GunicornStandalone(gunicorn.app.base.BaseApplication):
 @click.option('--worker_class', '-wc', default=None, help="Specify a custom class of worker to use")
 @click.option('--timeout', '-t', default=None, help="Seconds of timeout")
 @flask.cli.pass_script_info
-def cli(info, host, port, reload, debugger, workers, worker_class):
+def cli(info, host, port, reload, debugger, workers, worker_class, timeout):
 
     os.environ['FLASK_RUN_FROM_CLI_SERVER'] = '1'
     debug = flask.cli.get_debug_flag()
